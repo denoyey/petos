@@ -131,7 +131,7 @@ const HeroSection = () => {
               ref={(el) => (floatRefs.current[i] = el)}
               src={TEMPE_IMG}
               alt={`Petos Float ${i}`}
-              className={`absolute aspect-square object-cover rounded-[3rem] will-change-transform ${sizeClass} ${blurClass} ${zIndex}`}
+              className={`hero-product hero-product-${i} absolute aspect-square object-cover rounded-[3rem] will-change-transform ${sizeClass} ${blurClass} ${zIndex}`}
               loading="eager"
             />
           );
@@ -155,12 +155,12 @@ const HeroSection = () => {
             </h2>
           </div>
 
-          <p className="text-lg md:text-xl text-[#6E4228] mb-12 font-bold leading-relaxed max-w-2xl mx-auto bg-[#FAF3E0]/90 px-6 py-3 rounded-2xl">
+          <p className="text-sm md:text-lg text-[#6E4228] mb-8 font-bold leading-relaxed max-w-2xl mx-auto bg-[#FAF3E0]/90 px-6 py-2 rounded-2xl">
             Jalani hari lebih semangat dengan PETOS: Usir rasa bosan dan nikmati setiap gigitan renyahnya.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="group relative px-10 py-4 bg-[#E86A10] cursor-pointer text-[#FAF3E0] font-black text-md rounded-full transition-all hover:bg-[#D45A00] hover:scale-105 overflow-hidden">
+            <button className="group relative px-8 py-3 bg-[#E86A10] cursor-pointer text-[#FAF3E0] font-bold text-sm md:text-lg rounded-full transition-all hover:bg-[#D45A00] hover:scale-105 overflow-hidden">
               <span className="relative z-10 flex items-center gap-2 uppercase tracking-wide">
                 Bungkus Sekarang <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform" />
               </span>

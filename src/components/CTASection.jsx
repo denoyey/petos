@@ -32,7 +32,7 @@ const CTASection = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} className="py-20 md:py-48 bg-[#F5A623] relative z-40 rounded-t-[4rem] md:rounded-t-[8rem] mt-[-4rem] overflow-hidden flex items-center justify-center min-h-[60vh] md:min-h-[80vh]">
+    <section ref={sectionRef} className="py-20 md:py-32 bg-[#F5A623] relative z-40 rounded-t-[4rem] md:rounded-t-[8rem] mt-[-4rem] overflow-hidden flex items-center justify-center min-h-[40vh]">
 
       {/* Massive Background Text Pattern */}
       <div className="absolute inset-0 flex flex-wrap items-center justify-center opacity-10 pointer-events-none overflow-hidden text-[#2B1408] font-black text-5xl md:text-9xl leading-none break-all select-none">
@@ -42,10 +42,10 @@ const CTASection = () => {
       <div className="container mx-auto px-6 relative z-10 text-center">
         <div ref={textRef} className="max-w-5xl mx-auto flex flex-col items-center">
 
-          <h2 className="text-4xl md:text-[8rem] font-black text-[#2B1408] mb-4 md:mb-8 tracking-tighter uppercase leading-[0.85]">
+          <h2 className="text-5xl md:text-[8rem] font-black text-[#2B1408] mb-4 md:mb-8 tracking-tighter uppercase leading-[0.85]">
             SUDAH <span className="text-[#FAF3E0] block mt-2 md:mt-4">NGILER?</span>
           </h2>
-          <p className="text-[#4A2511] text-base md:text-3xl font-bold leading-relaxed max-w-3xl mx-auto mb-8 md:mb-16">
+          <p className="text-[#4A2511] text-md md:text-2xl font-bold leading-relaxed max-w-3xl mx-auto mb-8 md:mb-16">
             JANGAN DITAHAN. BUNGKUS PETOS KAMU SEKARANG JUGA SEBELUM KEHABISAN!
           </p>
 
@@ -54,9 +54,9 @@ const CTASection = () => {
               href="https://instagram.com/yourpetos"
               target="_blank"
               rel="noopener noreferrer"
-              className="group flex items-center justify-center gap-3 w-full sm:w-auto px-8 py-4 md:px-12 md:py-6 bg-[#2B1408] text-[#FAF3E0] font-black text-base md:text-2xl uppercase tracking-wider rounded-full hover:bg-[#1A0B04] transition-all shadow-2xl hover:scale-105 border-3 md:border-4 border-[#2B1408]"
+              className="group flex items-center justify-center gap-3 w-full sm:w-auto px-6 py-3 md:px-8 md:py-4 bg-[#2B1408] text-[#FAF3E0] font-bold text-lg uppercase tracking-wider rounded-full hover:bg-[#1A0B04] transition-all shadow-md hover:scale-105 border-3 md:border-4 border-[#2B1408]"
             >
-              <InstagramIcon className="w-6 h-6 md:w-8 md:h-8 text-[#E86A10] group-hover:rotate-12 transition-transform" />
+              <InstagramIcon className="w-6 h-6 text-[#E86A10] group-hover:rotate-12 transition-transform" />
               DM INSTA
               <ArrowRight className="w-6 h-6 opacity-50 group-hover:opacity-100 group-hover:translate-x-2 transition-transform" />
             </a>
@@ -65,9 +65,9 @@ const CTASection = () => {
               href="https://tiktok.com/@yourpetos"
               target="_blank"
               rel="noopener noreferrer"
-              className="group flex items-center justify-center gap-3 w-full sm:w-auto px-8 py-4 md:px-12 md:py-6 bg-[#FAF3E0] text-[#2B1408] font-black text-base md:text-2xl uppercase tracking-wider rounded-full hover:bg-white transition-all shadow-2xl hover:scale-105 border-3 md:border-4 border-[#2B1408]"
+              className="group flex items-center justify-center gap-3 w-full sm:w-auto px-6 py-3 md:px-8 md:py-4 bg-[#FAF3E0] text-[#2B1408] font-black text-lg uppercase tracking-wider rounded-full hover:bg-white transition-all shadow-md hover:scale-105 border-3 md:border-4 border-[#2B1408]"
             >
-              <ShoppingBag className="w-6 h-6 md:w-8 md:h-8 text-[#E86A10] group-hover:rotate-12 transition-transform" />
+              <ShoppingBag className="w-6 h-6 text-[#E86A10] group-hover:rotate-12 transition-transform" />
               TIKTOK
               <ArrowRight className="w-6 h-6 opacity-50 group-hover:opacity-100 group-hover:translate-x-2 transition-transform" />
             </a>
