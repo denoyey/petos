@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import { ShoppingBag, ArrowRight } from 'lucide-react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -32,11 +32,11 @@ const CTASection = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} className="py-20 md:py-32 bg-[#F5A623] relative z-40 rounded-t-[4rem] md:rounded-t-[8rem] mt-[-4rem] overflow-hidden flex items-center justify-center min-h-[40vh]">
+    <section ref={sectionRef} className="py-20 md:py-32 bg-[#F5A623] relative z-40 rounded-t-[4rem] md:rounded-t-[8rem] -mt-16 overflow-hidden flex items-center justify-center min-h-[40vh]">
 
       {/* Massive Background Text Pattern */}
       <div className="absolute inset-0 flex flex-wrap items-center justify-center opacity-10 pointer-events-none overflow-hidden text-[#2B1408] font-black text-5xl md:text-9xl leading-none break-all select-none">
-        PETOSPETOSPETOSPETOSPETOSPETOSPETOSPETOSPETOSPETOSPETOSPETOSPETOSPETOSPETOSPETOSPETOSPETOSPETOSPETOSPETOSPETOSPETOSPETOSPETOSPETOSPETOSPETOSPETOSPETOSPETOSPETO
+        PETOSPETOSPETOSPETOSPETOSPETOSPETOSPETOSPETOSPETOSPETOSPETOSPETOSPETOSPETOSPETOSPETOSPETOSPETOSPETOSPETOSPETOSPETOSPETOSPETOSPETOSPETOSPETOSPETOSPETOSPETOSPETOS
       </div>
 
       <div className="container mx-auto px-6 relative z-10 text-center">

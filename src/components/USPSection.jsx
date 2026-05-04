@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -96,7 +96,7 @@ const USPSection = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} className="usp-section relative z-20 bg-[#4A2511] rounded-t-[4rem] md:rounded-t-[8rem] mt-[-4rem]">
+    <section ref={sectionRef} className="usp-section relative z-20 bg-[#4A2511] rounded-t-[4rem] md:rounded-t-[8rem] -mt-16">
       <div
         ref={fixedRef}
         className="left-0 w-full h-screen flex items-center overflow-hidden z-30"
@@ -132,7 +132,7 @@ const USPSection = () => {
               </h2>
               <h2 className="text-[12vw] md:text-[6vw] font-bold text-[#FAF3E0]/30 leading-[0.85] tracking-tighter uppercase relative inline-block" style={{ fontFamily: 'Impact, sans-serif' }}>
                 MELEMPEM
-                <div className="b-strike absolute left-0 top-1/2 -translate-y-1/2 w-full h-[4px] md:h-[6px] bg-[#E86A10] rotate-[-2deg]"></div>
+                <div className="b-strike absolute left-0 top-1/2 -translate-y-1/2 w-full h-[4px] md:h-[6px] bg-[#E86A10] -rotate-2"></div>
               </h2>
               <div className="relative inline-block mt-2 mb-3 md:mb-6">
                 <div className="skew-box absolute inset-0 bg-[#E86A10] transform skew-x-6 rotate-1"></div>

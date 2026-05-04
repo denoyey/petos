@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ArrowRight } from 'lucide-react';
 
@@ -38,47 +38,38 @@ const HeroSection = () => {
       "shatter"
     );
 
-    // ==========================================
-    // 🔧 POSISI TEMPE: Edit array x, y, rotation di bawah ini
-    //    Index 0 = tempe pertama, index 1 = tempe kedua, dst.
-    //    x = posisi horizontal (negatif = kiri, positif = kanan)
-    //    y = posisi vertikal (negatif = atas, positif = bawah)
-    //    rotation = kemiringan gambar (dalam derajat)
-    // ==========================================
-    tl.fromTo(floatRefs.current,
-      { scale: 0, opacity: 0, x: 0, y: 0, force3D: true },
-      {
-        scale: 1,
-        opacity: 1,
-        // 0: BIG  - Pojok Kiri (tajam)
-        // 1: BIG  - Pojok Kanan (tajam)
-        // 2: Kecil - Atas Kiri Jauh (blur)
-        // 3: Kecil - Atas Kanan Jauh (blur)
-        // 4: Kecil - Bawah Kiri (blur)
-        // 5: Kecil - Bawah Kanan (blur)
-        x: (i) => ['-38vw', '38vw', '-30vw', '30vw', '-28vw', '28vw'][i],
-        y: (i) => ['0vh', '0vh', '-42vh', '-40vh', '42vh', '40vh'][i],
-        rotation: (i) => [-12, 12, -35, 25, -20, 30][i],
-        duration: 0.8,
-        ease: 'back.out(1.5)',
-        force3D: true
-      },
-      "shatter"
-    );
+    // Floating products — DESKTOP ONLY
+    const isMobile = window.innerWidth < 768;
+    if (!isMobile) {
+      tl.fromTo(floatRefs.current,
+        { scale: 0, opacity: 0, x: 0, y: 0, force3D: true },
+        {
+          scale: 1,
+          opacity: 1,
+          x: (i) => ['-38vw', '38vw'][i],
+          y: (i) => ['0vh', '0vh'][i],
+          rotation: (i) => [-12, 12][i],
+          duration: 0.8,
+          ease: 'back.out(1.5)',
+          force3D: true
+        },
+        "shatter"
+      );
 
-    // 5. Continuous Floating (Organic)
-    floatRefs.current.forEach((el, index) => {
-      gsap.to(el, {
-        y: '+=30',
-        rotation: '+=5',
-        duration: 2.5 + index * 0.5,
-        repeat: -1,
-        yoyo: true,
-        ease: 'sine.inOut',
-        force3D: true,
-        z: 0.1
+      // Continuous Floating (Desktop only)
+      floatRefs.current.forEach((el, index) => {
+        gsap.to(el, {
+          y: '+=20',
+          rotation: '+=5',
+          duration: 2.5 + index * 0.5,
+          repeat: -1,
+          yoyo: true,
+          ease: 'sine.inOut',
+          force3D: true,
+          z: 0.1
+        });
       });
-    });
+    }
 
   }, []);
 
@@ -109,29 +100,13 @@ const HeroSection = () => {
             - Ubah blurClass untuk efek blur
            ========================================== */}
         {[...Array(TOTAL_TEMPE)].map((_, i) => {
-          let sizeClass = "";
-          let blurClass = "";
-          let zIndex = "";
-
-          if (i === 0 || i === 1) {
-            // BIG - Pojok kiri/kanan, tajam & jelas
-            sizeClass = "w-[55vw] md:w-[22vw] max-w-[20rem]";
-            blurClass = "blur-none";
-            zIndex = "z-10";
-          } else {
-            // SMALL - Tersebar atas/bawah, blur depth effect
-            sizeClass = "w-[22vw] md:w-[9vw] max-w-[7rem]";
-            blurClass = "blur-[4px] opacity-65";
-            zIndex = "z-0";
-          }
-
           return (
             <img
               key={i}
               ref={(el) => (floatRefs.current[i] = el)}
               src={TEMPE_IMG}
               alt={`Petos Float ${i}`}
-              className={`hero-product hero-product-${i} absolute aspect-square object-cover rounded-[3rem] will-change-transform ${sizeClass} ${blurClass} ${zIndex}`}
+              className={`hero-product hero-product-${i} absolute aspect-square object-cover rounded-4xl md:rounded-[3rem] will-change-transform w-[28vw] md:w-[22vw] max-w-[20rem] z-10 hidden md:block`}
               loading="eager"
             />
           );
@@ -139,7 +114,7 @@ const HeroSection = () => {
       </div>
 
       {/* Massive Typography - Positioned in FRONT of the floating image (z-50) */}
-      <div className="relative z-50 container mx-auto px-6 flex flex-col items-center justify-center text-center h-screen sticky top-0 pointer-events-none">
+      <div className="relative z-50 container mx-auto px-6 flex flex-col items-center justify-center text-center h-screen pointer-events-none">
         <div ref={textRef} className="flex flex-col items-center w-full perspective-1000 pointer-events-auto">
 
           {/* Top Line */}

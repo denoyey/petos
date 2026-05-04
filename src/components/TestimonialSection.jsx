@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import { Star } from 'lucide-react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -90,7 +90,7 @@ const TestimonialSection = () => {
       {/* This div gets manually fixed/absolute positioned via JS */}
       <div ref={fixedRef} className="left-0 w-full h-screen flex flex-col justify-center overflow-hidden" style={{ position: 'absolute', top: 0 }}>
 
-        <div className="max-w-[90rem] mx-auto px-6 w-full">
+        <div className="max-w-360 mx-auto px-6 w-full">
           {/* Title */}
           <div className="text-right mb-10 md:mb-16">
             <h2 className="text-[12vw] md:text-[8vw] font-black text-[#4A2511] leading-[0.85] tracking-tighter uppercase" style={{ fontFamily: 'Impact, sans-serif' }}>
@@ -109,7 +109,7 @@ const TestimonialSection = () => {
         </div>
 
         {/* Card strip */}
-        <div 
+        <div
           ref={stripRef}
           className="flex gap-4 md:gap-7 items-center w-max pl-4 md:pl-12 pr-12"
         >
@@ -118,8 +118,8 @@ const TestimonialSection = () => {
             return (
               <div
                 key={testi.id}
-                className="w-[240px] md:w-[300px] flex-shrink-0 bg-white p-5 md:p-8 rounded-[1.5rem] md:rounded-[2rem] shadow-lg shadow-[#4A2511]/10 border-2 border-[#E8DCC8] flex flex-col will-change-transform"
-                style={{ 
+                className="w-[240px] md:w-[300px] shrink-0 bg-white p-5 md:p-8 rounded-3xl md:rounded-4xl shadow-lg shadow-[#4A2511]/10 border-2 border-[#E8DCC8] flex flex-col will-change-transform"
+                style={{
                   transform: `rotate(${style.rotation}deg) translateY(${style.yOffset}px)`,
                 }}
               >
@@ -138,9 +138,9 @@ const TestimonialSection = () => {
 
                 <div className="flex gap-1 mb-2 md:mb-3">
                   {[...Array(5)].map((_, i) => (
-                    <Star 
-                      key={i} 
-                      className={`w-3.5 h-3.5 md:w-4 md:h-4 ${i < testi.rating ? 'fill-[#E86A10] text-[#E86A10]' : 'text-[#E8DCC8]'}`} 
+                    <Star
+                      key={i}
+                      className={`w-3.5 h-3.5 md:w-4 md:h-4 ${i < testi.rating ? 'fill-[#E86A10] text-[#E86A10]' : 'text-[#E8DCC8]'}`}
                     />
                   ))}
                 </div>
