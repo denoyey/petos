@@ -1,5 +1,4 @@
 import { Flame, ShieldCheck, Zap } from 'lucide-react';
-
 export const usps = [
   {
     id: 1,
