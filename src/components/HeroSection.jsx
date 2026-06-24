@@ -52,7 +52,7 @@ const HeroSection = () => {
       });
     }
   }, []);
-  const TEMPE_IMG = "/tempe-atos.webp";
+  const TEMPE_IMG = "/product-petos.webp";
   return (
     <section ref={heroRef} className="relative w-full h-[110vh] flex items-center justify-center bg-petos-cream overflow-hidden">
       <video

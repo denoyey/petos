@@ -76,7 +76,7 @@ const Home = () => {
         className="fixed top-1/2 left-1/2 z-25 pointer-events-none will-change-transform opacity-0"
       >
         <img
-          src="/tempe-atos.webp"
+          src="/product-petos.webp"
           alt="Petos"
           style={{ width: '80vw', height: '80vw', maxWidth: '25rem', maxHeight: '25rem' }}
           className="object-contain drop-shadow-[0_0_60px_rgba(232,106,16,0.5)]"
